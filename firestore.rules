@@ -1,0 +1,132 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isTeacher() {
+      return signedIn()
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'teacher';
+    }
+
+    function isStudent() {
+      return signedIn()
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'student';
+    }
+
+    match /users/{userId} {
+      function owner() {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      function validProfile() {
+        return request.resource.data.name is string
+          && request.resource.data.name.size() <= 70
+          && request.resource.data.className is string
+          && request.resource.data.className.size() <= 70
+          && request.resource.data.interests is string
+          && request.resource.data.interests.size() <= 100
+          && request.resource.data.about is string
+          && request.resource.data.about.size() <= 500
+          && request.resource.data.solvedRiddles is list
+          && request.resource.data.solvedRiddles.size() <= 500
+          && request.resource.data.readStories is list
+          && request.resource.data.readStories.size() <= 100;
+      }
+
+      allow get: if owner() || isTeacher();
+      allow list: if isTeacher();
+      allow create: if owner()
+        && request.resource.data.keys().hasOnly([
+          'uid', 'email', 'name', 'photoURL', 'role', 'className',
+          'interests', 'about', 'solvedRiddles', 'readStories', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.uid == userId
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.role == 'student'
+        && validProfile();
+      allow update: if owner()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'name', 'className', 'interests', 'about', 'solvedRiddles', 'readStories', 'role', 'updatedAt'
+        ])
+        && (request.resource.data.role == resource.data.role
+          || (resource.data.role == 'student' && request.resource.data.role == 'teacher'))
+        && validProfile();
+      allow delete: if false;
+    }
+
+    match /assignments/{assignmentId} {
+      function validAssignment() {
+        return request.resource.data.keys().hasOnly([
+          'title', 'instructions', 'resourceType', 'resourceId',
+          'createdBy', 'teacherName', 'dueDate', 'active', 'createdAt'
+        ])
+          && request.resource.data.title is string
+          && request.resource.data.title.size() > 0
+          && request.resource.data.title.size() <= 120
+          && request.resource.data.instructions is string
+          && request.resource.data.instructions.size() > 0
+          && request.resource.data.instructions.size() <= 2000
+          && request.resource.data.resourceType in ['none', 'story', 'riddle']
+          && request.resource.data.resourceId is string
+          && request.resource.data.resourceId.size() <= 100
+          && request.resource.data.teacherName is string
+          && request.resource.data.teacherName.size() <= 70
+          && request.resource.data.dueDate is string
+          && request.resource.data.dueDate.size() <= 10
+          && request.resource.data.active is bool
+          && request.resource.data.createdAt is timestamp;
+      }
+
+      allow get, list: if signedIn();
+      allow create: if isTeacher()
+        && request.resource.data.createdBy == request.auth.uid
+        && request.resource.data.active == true
+        && validAssignment();
+      allow update: if isTeacher()
+        && resource.data.createdBy == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['active'])
+        && validAssignment();
+      allow delete: if false;
+    }
+
+    match /submissions/{submissionId} {
+      function validSubmission() {
+        return request.resource.data.keys().hasOnly([
+          'assignmentId', 'studentId', 'studentName', 'response',
+          'teacherFeedback', 'createdAt', 'updatedAt', 'reviewedAt'
+        ])
+          && request.resource.data.assignmentId is string
+          && request.resource.data.studentId is string
+          && request.resource.data.studentName is string
+          && request.resource.data.studentName.size() <= 70
+          && request.resource.data.response is string
+          && request.resource.data.response.size() > 0
+          && request.resource.data.response.size() <= 3000
+          && request.resource.data.teacherFeedback is string
+          && request.resource.data.teacherFeedback.size() <= 1000
+          && request.resource.data.createdAt is timestamp
+          && request.resource.data.updatedAt is timestamp;
+      }
+
+      allow get, list: if isTeacher()
+        || (signedIn() && resource.data.studentId == request.auth.uid);
+      allow create: if isStudent()
+        && submissionId == request.resource.data.assignmentId + '_' + request.auth.uid
+        && request.resource.data.studentId == request.auth.uid
+        && request.resource.data.teacherFeedback == ''
+        && get(/databases/$(database)/documents/assignments/$(request.resource.data.assignmentId)).data.active == true
+        && validSubmission();
+      allow update: if validSubmission() && (
+        (isStudent()
+          && resource.data.studentId == request.auth.uid
+          && get(/databases/$(database)/documents/assignments/$(resource.data.assignmentId)).data.active == true
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['response', 'updatedAt']))
+        || (isTeacher()
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['teacherFeedback', 'reviewedAt']))
+      );
+      allow delete: if false;
+    }
+  }
+}

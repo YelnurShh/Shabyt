@@ -1,0 +1,3 @@
+export function Ornament({ className = '', variant = 0 }: { className?: string; variant?: number }) {
+ return <svg className={className} viewBox="0 0 160 160" fill="none" aria-hidden="true"><g stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">{variant === 1 ? <><path d="M80 20 140 125H20Z"/><path d="M80 50v53M50 95q30-30 60 0M40 112h80"/></> : variant === 2 ? <><path d="m80 15 60 65-60 65-60-65Z"/><path d="m80 40 35 40-35 40-35-40Z"/><path d="M80 65v30M65 80h30"/></> : <><path d="M80 137V74C80 34 27 24 24 60c-3 26 35 31 35 9 0-13-15-12-16-4M80 74c0-40 53-50 56-14 3 26-35 31-35 9 0-13 15-12 16-4"/><path d="M80 112c-7-29-46-32-45-8 1 19 25 15 20 1M80 112c7-29 46-32 45-8-1 19-25 15-20 1M65 140h30M80 20v14"/></>}</g></svg>
+}
