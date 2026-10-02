@@ -13,7 +13,7 @@ export function AccountButton() {
   useEffect(() => setPhotoFailed(false), [photo]);
 
   if (loading) return <span className="account-button account-loading" aria-label="Профиль жүктелуде"><UserRound size={20}/><span>Жүктелуде…</span></span>;
-  if (!user) return <Link href="/login" className="account-button account-guest"><LogIn size={19}/><span>Кіру</span></Link>;
+  if (!user) return <Link href="/login" className="account-button account-guest" aria-label="Аккаунтқа кіру"><LogIn size={19}/><span>Кіру</span></Link>;
 
   const name = profile?.name || user.displayName || user.email?.split('@')[0] || 'Профиль';
   const role = profile?.role === 'teacher' ? 'Мұғалім' : 'Оқушы';

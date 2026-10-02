@@ -1,0 +1,37 @@
+@media(max-width:760px){
+  .shell{width:calc(100% - 32px)}
+  h1,h2,h3{overflow-wrap:break-word}
+  h2,.section-heading h2,.about-grid h2,.closing h2{font-size:clamp(28px,7.7vw,38px)}
+  .page-intro{padding-top:48px;padding-bottom:42px}
+  .page-intro h1{font-size:clamp(36px,8.8vw,58px)}
+  .section{padding-top:56px;padding-bottom:62px}
+  .section-heading{display:block}
+  .section-heading>p{margin-top:15px}
+  .home-hero{gap:32px;padding:36px 26px}
+  .home-hero-paths{margin-top:27px}
+  .home-author-portrait{width:min(100%,190px)}
+  .direction-card{min-height:0;padding:25px}
+  .direction-card .card-top{margin-bottom:23px}
+  .direction-card .eyebrow,.direction-card>p:not(.eyebrow){max-width:100%}
+  .direction-card .card-link{margin-top:24px}
+  .wiki-result{grid-template-columns:1fr}
+  .wiki-result-image{height:190px;min-height:190px}
+  .wiki-result-body{min-height:0;padding:20px}
+  .wiki-search-controls input{min-width:0}
+  .profile-identity p,.classroom-student>div:nth-child(2)>span{overflow-wrap:anywhere}
+  .profile-card-heading{flex-wrap:wrap}
+  .classroom-student-counts{width:100%;margin-left:0}
+}
+@media(max-width:380px){
+  .header-inner .brand>span{font-size:22px}
+  .header-inner .brand>img{width:32px;height:32px}
+  .header-inner .account-guest{min-width:42px;max-width:42px;justify-content:center;padding:5px}
+  .header-inner .account-guest span{display:none}
+  .home-hero{padding:30px 18px}
+  .home-hero h1{font-size:clamp(37px,11vw,43px)}
+  .home-hero-kicker{font-size:9px}
+  .home-author-portrait{width:min(100%,165px)}
+  .profile-identity{align-items:flex-start;flex-direction:column}
+  .profile-signin>div:last-child{flex-wrap:wrap}
+  .profile-card-heading .profile-edit{margin-left:auto}
+}
