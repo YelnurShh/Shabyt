@@ -43,6 +43,7 @@
 .classroom-response-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; }
 .classroom-response-head span { color: #8a998e; font-size: 11px; }
 .classroom-response > p { margin: 9px 0 15px; color: #415b49; font-size: 13px; white-space: pre-wrap; }
+.classroom-demo-response > p { margin-bottom: 0; }
 .classroom-response form { display: grid; gap: 10px; }
 .classroom-response form button { display: inline-flex; align-items: center; gap: 6px; min-height: 35px; padding: 7px 11px; border: 1px solid #bdd5c3; border-radius: 8px; background: #eaf4ec; color: var(--green); font-size: 11px; font-weight: 750; }
 .classroom-student-list { display: grid; gap: 9px; }
@@ -75,3 +76,40 @@
   .classroom-student { align-items: flex-start; flex-wrap: wrap; }
   .classroom-student-counts { width: 100%; margin-left: 57px; }
 }
+.classroom-roster-controls { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0; }
+.classroom-roster-controls label { display: grid; gap: 7px; min-width: min(100%, 220px); color: #344e3e; font-size: 12px; font-weight: 750; }
+.classroom-roster-controls input, .classroom-roster-controls select { min-height: 42px; width: 100%; padding: 9px 12px; border: 1px solid #d2dfd5; border-radius: 10px; background: #fff; color: var(--ink); font: inherit; }
+.classroom-roster-controls input:focus, .classroom-roster-controls select:focus { outline: 2px solid #77aa89; outline-offset: 2px; }
+.classroom-roster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; max-height: 470px; overflow-y: auto; padding: 2px 5px 2px 2px; }
+.classroom-roster-student { display: flex; align-items: center; gap: 11px; min-width: 0; padding: 11px 13px; border: 1px solid #e0e8e1; border-radius: 12px; background: #fff; }
+.classroom-roster-avatar { display: grid; place-items: center; flex: 0 0 auto; width: 37px; height: 37px; border-radius: 50%; background: #e3f0e6; color: var(--green); font-size: 14px; font-weight: 800; }
+.classroom-roster-student div { display: grid; min-width: 0; gap: 2px; }
+.classroom-roster-student strong { color: var(--ink); font-size: 13px; overflow-wrap: anywhere; }
+.classroom-roster-student div span { color: #829186; font-size: 11px; }
+.classroom-more { display: block; width: 100%; margin-top: 16px; padding: 13px 18px; border: 1px solid #c9d9ce; border-radius: 11px; background: #edf5ef; color: var(--green); font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.classroom-more:hover { background: #dcece1; transform: translateY(-1px); }
+@media (max-width: 1080px) and (min-width: 751px) { .classroom-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.classroom-assignment-collapsible { padding: 0; overflow: hidden; }
+.classroom-assignment-summary { display: flex; align-items: center; gap: 18px; min-height: 92px; padding: 20px 24px; list-style: none; cursor: pointer; }
+.classroom-assignment-summary::-webkit-details-marker { display: none; }
+.classroom-assignment-summary:focus-visible { outline: 3px solid #77aa89; outline-offset: -3px; border-radius: 15px; }
+.classroom-assignment-summary-copy { display: grid; justify-items: start; gap: 8px; min-width: 0; margin-right: auto; }
+.classroom-assignment-summary-copy strong { color: var(--ink); font-size: clamp(16px, 1.8vw, 21px); line-height: 1.3; }
+.classroom-assignment-summary-count { flex: 0 0 auto; padding: 8px 12px; border-radius: 999px; background: #eaf4ec; color: var(--green); font-size: 12px; font-weight: 800; white-space: nowrap; }
+.classroom-assignment-summary > svg { flex: 0 0 auto; color: var(--green); transition: transform .2s ease; }
+.classroom-assignment-collapsible[open] .classroom-assignment-summary > svg { transform: rotate(180deg); }
+.classroom-assignment-expanded { padding: 0 24px 24px; border-top: 1px solid #e5ece6; }
+.classroom-assignment-expanded > p { margin-top: 20px; color: #506358; font-size: 14px; line-height: 1.7; white-space: pre-wrap; }
+.classroom-toggle { margin-top: 18px; min-height: 38px; padding: 8px 12px; border: 1px solid #cddfcf; border-radius: 9px; background: #f5faf6; color: var(--green); font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
+.classroom-toggle:hover { background: #eaf4ec; }
+.classroom-respondent-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; max-height: 340px; overflow-y: auto; margin: 0; padding: 2px 5px 2px 2px; list-style: none; }
+.classroom-respondent-list li { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding: 10px 12px; border: 1px solid #e1eae3; border-radius: 10px; background: #fbfdfb; color: #344e3e; font-size: 12px; font-weight: 700; overflow-wrap: anywhere; }
+.classroom-respondent-list li span { flex: 0 0 auto; color: #829186; font-size: 10px; }
+@media (max-width: 750px) {
+  .classroom-assignment-summary { flex-wrap: wrap; gap: 9px; padding: 17px; }
+  .classroom-assignment-summary-copy { flex-basis: calc(100% - 40px); }
+  .classroom-assignment-summary-count { order: 3; }
+  .classroom-assignment-expanded { padding: 0 17px 17px; }
+  .classroom-respondent-list { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .classroom-assignment-summary > svg { transition: none; } }

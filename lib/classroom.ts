@@ -33,10 +33,12 @@ export const assignmentRiddles = riddles.filter(riddle => riddle.kind !== 'prove
 
 export function assignmentResource(assignment: Assignment) {
   if (assignment.resourceType === 'story') {
+    if (assignment.resourceId === 'all') return { label: 'Ертегілер бетіне өту', href: '/ertegiler' };
     const story = stories.find(item => item.slug === assignment.resourceId);
     return story ? { label: `Ертегі: ${story.title}`, href: `/ertegiler#story-${story.slug}` } : null;
   }
   if (assignment.resourceType === 'riddle') {
+    if (assignment.resourceId === 'all') return { label: 'Жұмбақтар бетіне өту', href: '/zhumbaktar' };
     const riddle = assignmentRiddles.find(item => item.id === assignment.resourceId);
     return riddle ? { label: `Жұмбақ №${riddle.id}`, href: `/zhumbaktar#riddle-${riddle.id}` } : null;
   }

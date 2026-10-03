@@ -56,6 +56,12 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    // Fictional class roster for planning; these are not Auth accounts.
+    match /classRoster/{studentId} {
+      allow get, list: if isTeacher();
+      allow write: if false;
+    }
+
     match /assignments/{assignmentId} {
       function validAssignment() {
         return request.resource.data.keys().hasOnly([

@@ -57,6 +57,7 @@ export function StudentAssignments() {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [shownAssignments, setShownAssignments] = useState(8);
 
   useEffect(() => {
     if (!user || profile?.role !== 'student') return;
@@ -81,6 +82,6 @@ export function StudentAssignments() {
   return <section className="classroom-student-assignments" id="assignments" aria-labelledby="student-assignments-title">
     <div className="classroom-section-head"><div><p className="eyebrow">МАҒАН БЕРІЛГЕН ТАПСЫРМАЛАР</p><h2 id="student-assignments-title">Тапсырмаларым</h2></div><ClipboardList size={27} aria-hidden="true"/></div>
     {error && <p className="classroom-error" role="alert">{error}</p>}
-    {loading ? <p className="classroom-empty">Тапсырмалар жүктелуде…</p> : visibleAssignments.length === 0 ? <p className="classroom-empty">Қазір берілген тапсырма жоқ. Мұғалім жариялаған кезде осы жерде көрінеді.</p> : <div className="classroom-assignment-list">{visibleAssignments.map(item => <StudentAssignmentCard key={item.id} assignment={item} submission={submissions.find(submission => submission.assignmentId === item.id)}/>)}</div>}
+    {loading ? <p className="classroom-empty">Тапсырмалар жүктелуде…</p> : visibleAssignments.length === 0 ? <p className="classroom-empty">Қазір берілген тапсырма жоқ. Мұғалім жариялаған кезде осы жерде көрінеді.</p> : <><p className="classroom-help">{visibleAssignments.length} тапсырма жарияланған. Орындаған жұмысың туралы жауапты мұғалімге жібер.</p><div className="classroom-assignment-list">{visibleAssignments.slice(0, shownAssignments).map(item => <StudentAssignmentCard key={item.id} assignment={item} submission={submissions.find(submission => submission.assignmentId === item.id)}/>)}</div>{visibleAssignments.length > shownAssignments && <button type="button" className="classroom-more" onClick={() => setShownAssignments(count => count + 8)}>Тағы тапсырмалар көрсету ({visibleAssignments.length - shownAssignments})</button>}</>}
   </section>;
 }

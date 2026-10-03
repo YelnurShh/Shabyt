@@ -43,7 +43,7 @@
 .auth-divider::before { content: ""; position: absolute; top: 50%; left: 0; width: 100%; border-top: 1px solid var(--line); }
 .auth-divider span { position: relative; padding: 0 12px; background: #f7faf7; }
 .auth-google { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 51px; border: 1px solid #d8e4db; border-radius: 10px; background: #fff; color: #2a4131; font-size: 13px; font-weight: 750; }
-.auth-google-letter { display: grid; place-items: center; width: 24px; height: 24px; font-family: Arial, sans-serif; font-size: 20px; font-weight: 750; color: #4285f4; }
+.auth-google-icon { display: block; flex: 0 0 auto; width: 20px; height: 20px; }
 .auth-teacher-note { display: flex; align-items: center; gap: 8px; margin-top: 12px; color: #64806b; font-size: 11px; }
 .auth-switch { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; margin-top: 27px; color: #788a7d; font-size: 12px; }
 .auth-switch a { display: inline-flex; align-items: center; gap: 3px; color: var(--green); font-weight: 750; }
@@ -52,7 +52,7 @@
 @media (hover: hover) and (pointer: fine) {
   .account-button:hover { border-color: #aac9b1; background: #f7faf7; }
   .auth-submit:hover { background: var(--brand-gradient-hover); }
-  .auth-google:hover { background: #f5faf6; border-color: #a9cab2; }
+  .auth-google:hover { background: #fff; border-color: #a9cab2; }
 }
 @media (max-width: 1150px) {
   .header-inner { height: auto; min-height: 76px; flex-wrap: wrap; gap: 8px 12px; padding-top: 12px; padding-bottom: 10px; }

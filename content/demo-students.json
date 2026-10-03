@@ -1,0 +1,614 @@
+[
+  {
+    "id": "demo-001",
+    "name": "Әбілова Айару",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-002",
+    "name": "Ахметова Аяулым",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-003",
+    "name": "Баймұратова Аружан",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-004",
+    "name": "Берікқызы Айзере",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-005",
+    "name": "Бекенова Айша",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-006",
+    "name": "Дәулетова Әмина",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-007",
+    "name": "Ержанова Әдемі",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-008",
+    "name": "Есенова Әлия",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-009",
+    "name": "Жақсылықова Әсел",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-010",
+    "name": "Жұмабаева Ақерке",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-011",
+    "name": "Қайратова Айым",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-012",
+    "name": "Қалымова Айнұр",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-013",
+    "name": "Қанатова Ақбота",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-014",
+    "name": "Қасымова Балауса",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-015",
+    "name": "Кенжеғұлова Балнұр",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-016",
+    "name": "Көпжанова Ботагөз",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-017",
+    "name": "Маратова Бибігүл",
+    "className": "5А",
+    "demo": true
+  },
+  {
+    "id": "demo-018",
+    "name": "Мұратова Гүлназ",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-019",
+    "name": "Нұрбекова Гүлнұр",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-020",
+    "name": "Нұрланова Гүлдана",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-021",
+    "name": "Омарова Гүлсім",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-022",
+    "name": "Оразбаева Гүлмира",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-023",
+    "name": "Рахметова Гүлжан",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-024",
+    "name": "Сағындықова Дана",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-025",
+    "name": "Сейітова Дария",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-026",
+    "name": "Серікқызы Дильназ",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-027",
+    "name": "Сұлтанова Динара",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-028",
+    "name": "Төлегенова Ділдә",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-029",
+    "name": "Тұрсынова Жанерке",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-030",
+    "name": "Уәлиева Жансая",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-031",
+    "name": "Хасенова Жанель",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-032",
+    "name": "Шәріпова Жания",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-033",
+    "name": "Ыбыраева Жұлдыз",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-034",
+    "name": "Әділова Жібек",
+    "className": "5Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-035",
+    "name": "Әбілова Зарина",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-036",
+    "name": "Ахметова Зере",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-037",
+    "name": "Баймұратова Зейнеп",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-038",
+    "name": "Берікқызы Інжу",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-039",
+    "name": "Бекенова Іңкәр",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-040",
+    "name": "Дәулетова Кәусар",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-041",
+    "name": "Ержанова Көркем",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-042",
+    "name": "Есенова Күмісай",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-043",
+    "name": "Жақсылықова Ләззат",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-044",
+    "name": "Жұмабаева Ләйлә",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-045",
+    "name": "Қайратова Мадина",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-046",
+    "name": "Қалымова Малика",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-047",
+    "name": "Қанатова Меруерт",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-048",
+    "name": "Қасымова Мөлдір",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-049",
+    "name": "Кенжеғұлова Назерке",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-050",
+    "name": "Көпжанова Назгүл",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-051",
+    "name": "Маратова Назым",
+    "className": "6А",
+    "demo": true
+  },
+  {
+    "id": "demo-052",
+    "name": "Мұратова Нәзира",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-053",
+    "name": "Нұрбекова Нұрай",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-054",
+    "name": "Нұрланова Нұргүл",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-055",
+    "name": "Омарова Нұрсая",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-056",
+    "name": "Оразбаева Нұрия",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-057",
+    "name": "Рахметова Раушан",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-058",
+    "name": "Сағындықова Раяна",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-059",
+    "name": "Сейітова Роза",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-060",
+    "name": "Серікқызы Сабина",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-061",
+    "name": "Сұлтанова Салтанат",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-062",
+    "name": "Төлегенова Самал",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-063",
+    "name": "Тұрсынова Сандуғаш",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-064",
+    "name": "Уәлиева Сара",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-065",
+    "name": "Хасенова Сая",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-066",
+    "name": "Шәріпова Саида",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-067",
+    "name": "Ыбыраева Сезім",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-068",
+    "name": "Әділова Сымбат",
+    "className": "6Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-069",
+    "name": "Әбілова Томирис",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-070",
+    "name": "Ахметова Толғанай",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-071",
+    "name": "Баймұратова Ұлжан",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-072",
+    "name": "Берікқызы Үміт",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-073",
+    "name": "Бекенова Фариза",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-074",
+    "name": "Дәулетова Хадиша",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-075",
+    "name": "Ержанова Шұғыла",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-076",
+    "name": "Есенова Шынар",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-077",
+    "name": "Жақсылықова Ырысжан",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-078",
+    "name": "Жұмабаева Эльмира",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-079",
+    "name": "Қайратова Ясмина",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-080",
+    "name": "Қалымова Айбике",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-081",
+    "name": "Қанатова Айгерім",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-082",
+    "name": "Қасымова Айдана",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-083",
+    "name": "Кенжеғұлова Айкөркем",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-084",
+    "name": "Көпжанова Айнәз",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-085",
+    "name": "Маратова Айсәуле",
+    "className": "7А",
+    "demo": true
+  },
+  {
+    "id": "demo-086",
+    "name": "Мұратова Ақмарал",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-087",
+    "name": "Нұрбекова Алтынай",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-088",
+    "name": "Нұрланова Асылым",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-089",
+    "name": "Омарова Әсем",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-090",
+    "name": "Оразбаева Әсима",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-091",
+    "name": "Рахметова Баян",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-092",
+    "name": "Сағындықова Береке",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-093",
+    "name": "Сейітова Гүләйім",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-094",
+    "name": "Серікқызы Дариға",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-095",
+    "name": "Сұлтанова Еркежан",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-096",
+    "name": "Төлегенова Жазира",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-097",
+    "name": "Тұрсынова Жайна",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-098",
+    "name": "Уәлиева Жұлдызай",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-099",
+    "name": "Хасенова Күнсұлу",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-100",
+    "name": "Шәріпова Лаура",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-101",
+    "name": "Ыбыраева Марал",
+    "className": "7Ә",
+    "demo": true
+  },
+  {
+    "id": "demo-102",
+    "name": "Әділова Нұрила",
+    "className": "7Ә",
+    "demo": true
+  }
+]

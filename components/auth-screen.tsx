@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
 import { doc, updateDoc } from 'firebase/firestore';
@@ -135,7 +136,7 @@ export function AuthScreen({ mode }: { mode: 'login' | 'register' }) {
       </form>
 
       <div className="auth-divider"><span>немесе</span></div>
-      <button type="button" className="auth-google" onClick={() => void googleSignIn()} disabled={busy || registrationPending}><span className="auth-google-letter">G</span> Google арқылы {mode === 'register' ? 'тіркелу' : 'кіру'}</button>
+      <button type="button" className="auth-google" onClick={() => void googleSignIn()} disabled={busy || registrationPending}><Image className="auth-google-icon" src="/google-g.svg" alt="" width={20} height={20}/> Google арқылы {mode === 'register' ? 'тіркелу' : 'кіру'}</button>
       {mode === 'register' && role === 'teacher' && <p className="auth-teacher-note"><LockKeyhole size={16}/> Google арқылы тіркелгенде де арнайы код қажет.</p>}
       <p className="auth-switch">{mode === 'register' ? 'Аккаунтыңыз бар ма?' : 'Әлі аккаунтыңыз жоқ па?'} <Link href={mode === 'register' ? '/login' : '/register'}>{mode === 'register' ? 'Кіру' : 'Тіркелу'} <ArrowRight size={15}/></Link></p>
       <p className="auth-privacy"><Mail size={14}/> Профиль деректері Firebase-де сақталады.</p>
