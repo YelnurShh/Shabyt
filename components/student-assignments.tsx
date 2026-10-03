@@ -3,7 +3,7 @@
 import { FormEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { collection, doc, onSnapshot, query, serverTimestamp, setDoc, updateDoc, where } from 'firebase/firestore';
-import { ArrowUpRight, Check, ClipboardList, MessageSquareText } from 'lucide-react';
+import { ArrowUpRight, Check, ChevronDown, ClipboardList, MessageSquareText } from 'lucide-react';
 import { db } from '@/lib/firebase-client';
 import { Assignment, Submission, assignmentDate, assignmentResource } from '@/lib/classroom';
 import { useAuth } from './auth-provider';
@@ -42,13 +42,15 @@ function StudentAssignmentCard({ assignment, submission }: { assignment: Assignm
     }
   }
 
-  return <article className="classroom-assignment student-assignment">
-    <div className="classroom-assignment-head"><div><span className={`classroom-status${assignment.active ? submission ? ' is-submitted' : '' : ' is-closed'}`}>{assignment.active ? submission ? 'Жауап жіберілді' : 'Орындау керек' : 'Тапсырма жабық'}</span><h3>{assignment.title}</h3></div></div>
-    <p>{assignment.instructions}</p>
-    <div className="classroom-meta">{resource && <Link href={resource.href}>{resource.label} <ArrowUpRight size={14}/></Link>}{assignment.dueDate && <span>Мерзімі: {assignmentDate(assignment.dueDate)}</span>}<span>Мұғалім: {assignment.teacherName}</span></div>
-    {assignment.active ? <form onSubmit={submit} className="classroom-submit-form"><label>Жауабың және кері байланысың<textarea value={response} onChange={event => { setResponse(event.target.value); setStatus(''); }} placeholder="Тапсырма бойынша ойыңды, орындаған жұмысыңды және сұрағыңды жаз…" minLength={1} maxLength={3000} rows={4} required/></label><div><button type="submit" className="button primary" disabled={busy}><Check size={17}/>{busy ? 'Жіберілуде…' : submission ? 'Жауапты жаңарту' : 'Мұғалімге жіберу'}</button><span role="status">{status}</span></div></form> : submission && <div className="classroom-closed-response"><strong>Жіберген жауабың</strong><p>{submission.response}</p></div>}
-    {submission?.teacherFeedback && <div className="classroom-feedback"><MessageSquareText size={19}/><div><strong>Мұғалімнің пікірі</strong><p>{submission.teacherFeedback}</p></div></div>}
-  </article>;
+  return <details className="classroom-assignment classroom-assignment-collapsible student-assignment">
+    <summary className="classroom-assignment-summary"><span className="classroom-assignment-summary-copy"><span className={`classroom-status${assignment.active ? submission ? ' is-submitted' : '' : ' is-closed'}`}>{assignment.active ? submission ? 'Жауап жіберілді' : 'Орындау керек' : 'Тапсырма жабық'}</span><strong>{assignment.title}</strong></span><ChevronDown size={21} aria-hidden="true"/></summary>
+    <div className="classroom-assignment-expanded">
+      <p>{assignment.instructions}</p>
+      <div className="classroom-meta">{resource && <Link href={resource.href}>{resource.label} <ArrowUpRight size={14}/></Link>}{assignment.dueDate && <span>Мерзімі: {assignmentDate(assignment.dueDate)}</span>}<span>Мұғалім: {assignment.teacherName}</span></div>
+      {assignment.active ? <form onSubmit={submit} className="classroom-submit-form"><label>Жауабың және кері байланысың<textarea value={response} onChange={event => { setResponse(event.target.value); setStatus(''); }} placeholder="Тапсырма бойынша ойыңды, орындаған жұмысыңды және сұрағыңды жаз…" minLength={1} maxLength={3000} rows={4} required/></label><div><button type="submit" className="button primary" disabled={busy}><Check size={17}/>{busy ? 'Жіберілуде…' : submission ? 'Жауапты жаңарту' : 'Мұғалімге жіберу'}</button><span role="status">{status}</span></div></form> : submission && <div className="classroom-closed-response"><strong>Жіберген жауабың</strong><p>{submission.response}</p></div>}
+      {submission?.teacherFeedback && <div className="classroom-feedback"><MessageSquareText size={19}/><div><strong>Мұғалімнің пікірі</strong><p>{submission.teacherFeedback}</p></div></div>}
+    </div>
+  </details>;
 }
 
 export function StudentAssignments() {
@@ -57,7 +59,6 @@ export function StudentAssignments() {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [shownAssignments, setShownAssignments] = useState(8);
 
   useEffect(() => {
     if (!user || profile?.role !== 'student') return;
@@ -82,6 +83,6 @@ export function StudentAssignments() {
   return <section className="classroom-student-assignments" id="assignments" aria-labelledby="student-assignments-title">
     <div className="classroom-section-head"><div><p className="eyebrow">МАҒАН БЕРІЛГЕН ТАПСЫРМАЛАР</p><h2 id="student-assignments-title">Тапсырмаларым</h2></div><ClipboardList size={27} aria-hidden="true"/></div>
     {error && <p className="classroom-error" role="alert">{error}</p>}
-    {loading ? <p className="classroom-empty">Тапсырмалар жүктелуде…</p> : visibleAssignments.length === 0 ? <p className="classroom-empty">Қазір берілген тапсырма жоқ. Мұғалім жариялаған кезде осы жерде көрінеді.</p> : <><p className="classroom-help">{visibleAssignments.length} тапсырма жарияланған. Орындаған жұмысың туралы жауапты мұғалімге жібер.</p><div className="classroom-assignment-list">{visibleAssignments.slice(0, shownAssignments).map(item => <StudentAssignmentCard key={item.id} assignment={item} submission={submissions.find(submission => submission.assignmentId === item.id)}/>)}</div>{visibleAssignments.length > shownAssignments && <button type="button" className="classroom-more" onClick={() => setShownAssignments(count => count + 8)}>Тағы тапсырмалар көрсету ({visibleAssignments.length - shownAssignments})</button>}</>}
+    {loading ? <p className="classroom-empty">Тапсырмалар жүктелуде…</p> : visibleAssignments.length === 0 ? <p className="classroom-empty">Қазір берілген тапсырма жоқ. Мұғалім жариялаған кезде осы жерде көрінеді.</p> : <><p className="classroom-help">{visibleAssignments.length} тапсырма жарияланған. Шартын оқу және жауап жіберу үшін тапсырманы аш.</p><div className="classroom-assignment-list">{visibleAssignments.map(item => <StudentAssignmentCard key={item.id} assignment={item} submission={submissions.find(submission => submission.assignmentId === item.id)}/>)}</div></>}
   </section>;
 }
