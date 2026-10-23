@@ -10,7 +10,6 @@ import { stories } from '@/content/stories';
 import { auth } from '@/lib/firebase-client';
 import { useAuth } from './auth-provider';
 import { StudentAssignments } from './student-assignments';
-import { TeacherDashboard } from './teacher-dashboard';
 
 type FormData = { name: string; className: string; interests: string; about: string };
 const emptyForm: FormData = { name: '', className: '', interests: '', about: '' };
@@ -83,7 +82,7 @@ export function ProfileDashboard() {
       <div className="profile-heading">
         <p className="eyebrow"><span className="dot"/> SHABYT · ЖЕКЕ КЕҢІСТІК</p>
         <h1>Менің <span className="accent">профилім</span></h1>
-        <p>{profile?.role === 'teacher' ? 'Оқушыларды бақылап, тапсырма беріп, жауаптарына пікір қалдырыңыз.' : 'Оқыған ертегілерің мен шешкен жұмбақтарыңды бір жерден көр.'}</p>
+        <p>{profile?.role === 'teacher' ? 'Жеке мәліметтеріңізді қарап, профиліңізді толықтырыңыз.' : 'Оқыған ертегілерің мен шешкен жұмбақтарыңды бір жерден көр.'}</p>
       </div>
       <button type="button" className="profile-logout" onClick={() => void logout()}><LogOut size={18}/> Аккаунттан шығу</button>
     </div>
@@ -96,7 +95,7 @@ export function ProfileDashboard() {
     </div>
     {(error || logoutError) && <p className="profile-service-error" role="alert">{error || logoutError}</p>}
 
-    {profile?.role === 'teacher' ? <TeacherDashboard/> : <><section className="profile-progress" aria-labelledby="profile-progress-title">
+    {profile?.role === 'student' && <><section className="profile-progress" aria-labelledby="profile-progress-title">
       <div className="profile-section-heading"><div><p className="eyebrow">МЕНІҢ ЖЕТІСТІГІМ</p><h2 id="profile-progress-title">Шығармашылық прогресс</h2></div></div>
       <div className="profile-stats">
         <Link href="/zhumbaktar" className="profile-stat"><div className="profile-stat-icon"><Puzzle size={23}/></div><span>ШЕШІЛГЕН ЖҰМБАҚ</span><strong>{solved.length}<small> / {totalRiddles}</small></strong><div className="profile-meter" aria-hidden="true"><i style={{ width: `${Math.min(100, solved.length / totalRiddles * 100)}%` }}/></div><em>Жұмбақтарға өту <ArrowUpRight size={16}/></em></Link>

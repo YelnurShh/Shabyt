@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { BrandMark } from './brand-mark';
 import { AccountButton } from './account-button';
-import { useAuth } from './auth-provider';
 
 const links = [
   ['/', 'Басты бет'],
@@ -19,7 +18,6 @@ const links = [
 
 export function Header() {
   const path = usePathname();
-  const { profile } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -40,7 +38,7 @@ export function Header() {
     <div className="shell header-inner">
       <Link href="/" className="brand" aria-label="Shabyt — басты бет" onClick={() => setMenuOpen(false)}><BrandMark/><span>Shabyt<span className="brand-caption">ҰЛТТЫҚ МҰРА · ЖАҢА КӨЗҚАРАС</span></span></Link>
       <nav id="site-navigation" className={`site-nav${menuOpen ? ' is-open' : ''}`} aria-label="Негізгі навигация">
-        {links.map(([href, label]) => <Link key={href} href={href} className={path === href ? 'active' : ''} aria-current={path === href ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{href === '/profile' && profile?.role === 'teacher' ? 'Мұғалім панелі' : label}</Link>)}
+        {links.map(([href, label]) => <Link key={href} href={href} className={path === href ? 'active' : ''} aria-current={path === href ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{label}</Link>)}
       </nav>
       <AccountButton/>
       <button ref={menuButtonRef} type="button" className="mobile-menu-toggle" aria-controls="site-navigation" aria-expanded={menuOpen} aria-label={menuOpen ? 'Мәзірді жабу' : 'Мәзірді ашу'} onClick={() => setMenuOpen(open => !open)}>{menuOpen ? <X size={22} aria-hidden="true"/> : <Menu size={22} aria-hidden="true"/>}<span>Мәзір</span></button>

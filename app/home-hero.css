@@ -29,3 +29,8 @@
 @media(max-width:760px){.home-hero{grid-template-columns:1fr;gap:42px;min-height:0;margin-top:18px;padding:42px 30px}.home-hero h1{font-size:clamp(46px,9vw,70px)}.home-hero-paths{margin-top:34px}.home-author{justify-self:center;width:min(100%,410px)}.home-author-portrait{width:min(100%,220px);margin-block:21px}}
 @media(max-width:440px){.home-hero{padding:36px 22px;border-radius:24px}.home-hero-kicker{font-size:10px}.home-hero h1{font-size:clamp(43px,11vw,52px)}.home-hero-description{font-size:16px}.home-hero-actions{align-items:stretch}.home-hero-primary,.home-hero-secondary{width:100%}.home-hero-paths a{font-size:11px}.home-author{padding:19px}.home-author-caption h2{font-size:27px}}
 @media(prefers-reduced-motion:reduce){.home-hero-copy,.home-author{animation:none}.home-hero-primary,.home-hero-secondary{transition:background-color 180ms ease}.home-hero-primary:hover,.home-hero-secondary:hover{transform:none}}
+/* Longer project title and the new portrait retain their proportions on phones. */
+.home-hero h1.home-hero-project-title{font-size:clamp(34px,4vw,54px);letter-spacing:-.05em;line-height:1.16;overflow-wrap:break-word}
+.home-student-portrait{aspect-ratio:941/1262}
+@media(max-width:760px){.home-hero h1.home-hero-project-title{font-size:clamp(32px,6.8vw,48px)}}
+@media(max-width:440px){.home-hero h1.home-hero-project-title{font-size:clamp(28px,7.8vw,34px)}}

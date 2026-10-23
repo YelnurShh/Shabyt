@@ -3,7 +3,7 @@ import { ProfileDashboard } from '@/components/profile-dashboard';
 
 export const metadata: Metadata = {
   title: 'Менің профилім',
-  description: 'Shabyt сайтындағы оқушы тапсырмалары, шығармашылық прогресс және мұғалім панелі.',
+  description: 'Shabyt сайтындағы жеке профиль, оқушы тапсырмалары және шығармашылық прогресс.',
 };
 
 export default function ProfilePage() {
