@@ -1,0 +1,50 @@
+[
+  {
+    "name": "makta-kyz.mp4",
+    "title": "Мақта қыз — бейне",
+    "kind": "video",
+    "href": "/project-files/makta-kyz.mp4",
+    "qr": "/qr-codes/makta-kyz.png",
+    "size": 71.7
+  },
+  {
+    "name": "shabyt-plagiarism.pdf",
+    "title": "Shabyt — плагиат есебі",
+    "kind": "pdf",
+    "href": "/project-files/shabyt-plagiarism.pdf",
+    "qr": "/qr-codes/shabyt-plagiarism.png",
+    "size": 0.7
+  },
+  {
+    "name": "aiaru-project.pdf",
+    "title": "Сейтқазы Айару — жоба",
+    "kind": "pdf",
+    "href": "/project-files/aiaru-project.pdf",
+    "qr": "/qr-codes/aiaru-project.png",
+    "size": 0.4
+  },
+  {
+    "name": "research-diary.pdf",
+    "title": "Зерттеу күнделігі",
+    "kind": "pdf",
+    "href": "/project-files/research-diary.pdf",
+    "qr": "/qr-codes/research-diary.png",
+    "size": 0.1
+  },
+  {
+    "name": "bayan-batyr-project.pdf",
+    "title": "Баян батыр жобасы",
+    "kind": "pdf",
+    "href": "/project-files/bayan-batyr-project.pdf",
+    "qr": "/qr-codes/bayan-batyr-project.png",
+    "size": 0.8
+  },
+  {
+    "name": "duplichecker-report.pdf",
+    "title": "Duplichecker — плагиат есебі",
+    "kind": "pdf",
+    "href": "/project-files/duplichecker-report.pdf",
+    "qr": "/qr-codes/duplichecker-report.png",
+    "size": 0.1
+  }
+]
